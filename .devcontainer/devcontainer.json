@@ -13,12 +13,14 @@
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/devcontainers-extra/features/apt-packages:1": {
-			"packages": "cmake,pkg-config"
-		},
+      "packages": "cmake,pkg-config"
+    },
     "ghcr.io/devcontainers/features/common-utils:2": {
-			"configureZshAsDefaultShell": true
-		},
-    //"ghcr.io/devcontainers/features/docker-in-docker:2": {},
+      "configureZshAsDefaultShell": true
+    },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+      "moby": false
+    },
     "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers-extra/features/act:1": {},
     "ghcr.io/devcontainers-community/npm-features/prettier:1": {},
@@ -29,8 +31,7 @@
   // "forwardPorts": [],
 
   // Use 'postCreateCommand' to run commands after the container is created.
-  // docker pull catthehacker/ubuntu:act-latest &&
-  "onCreateCommand": "gem install licensed && corepack enable",
+  "onCreateCommand": "docker pull catthehacker/ubuntu:act-latest && gem install licensed && corepack enable",
   "postCreateCommand": "pnpm install",
 
   // Configure tool-specific properties.
