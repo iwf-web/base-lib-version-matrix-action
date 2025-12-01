@@ -40,7 +40,7 @@
     "@actions/core": "^1.11.1",
     "@actions/http-client": "^3.0.0",
     "semver": "^7.7.3",
-    "yaml": "^2.8.1"
+    "yaml": "^2.8.2"
   },
   "devDependencies": {
     "@antfu/ni": "^27.0.1",
